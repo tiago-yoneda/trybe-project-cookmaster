@@ -7,7 +7,7 @@ Qualquer usuario cadastrado pode criar uma receita, e apenas o dono da receita o
 
 API criada usando Node.JS, express e banco de dados MongoDB. Utilizando verificação via JWT, e arquitetura MVC.
 
-Com testes de cobertura usando Sinon e chai.
+Com testes de cobertura usando Sinon e chai. Os testes estão na pasta `./src/integration-tests/`
 
 # Trybe Projeto Cookmaster v2
 ### Todo -> video demo
