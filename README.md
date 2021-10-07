@@ -5,20 +5,16 @@ Projeto de Backend no curso da Trybe.
 Aqui temos uma API com CRUD de receitas e uma etapa de cadastro de usuários e administradores.
 Qualquer usuario cadastrado pode criar uma receita, e apenas o dono da receita ou o admin podem modificá-la.
 
-API criada usando Node.JS, express e banco de dados MongoDB. Utilizando verificação via JWT.
+API criada usando Node.JS, express e banco de dados MongoDB. Utilizando verificação via JWT, e arquitetura MVC.
 
-# Boas vindas ao repositório do projeto Cookmaster!
-
-Você já usa o GitHub diariamente para desenvolver os exercícios, certo? Agora, para desenvolver os projetos, você deverá seguir as instruções a seguir. Fique atento a cada passo, e se tiver qualquer dúvida, nos envie por Slack! #vqv 🚀
-
-Aqui você vai encontrar os detalhes de como estruturar o desenvolvimento do seu projeto a partir deste repositório, utilizando uma branch específica e um Pull Request para colocar seus códigos.
-
+# Trybe Projeto Cookmaster v2
+### Todo -> video demo
 ---
 
 # Sumário
 
 - [Avisos](#avisos)
-- [Boas vindas ao repositório do projeto Cookmaster!](#boas-vindas-ao-repositório-do-projeto-cookmaster)
+- [Trybe Projeto Cookmaster v2](#trybe-projeto-cookmaster-v2)
 - [Habilidades](#habilidades)
 - [O que deverá ser desenvolvido](#o-que-deverá-ser-desenvolvido)
   - [Desenvolvimento](#desenvolvimento)
@@ -120,8 +116,31 @@ Deverá ser possível adicionar uma imagem à uma receita, utilizando o upload d
 ---
 # Como utilizar este projeto
   ## Configuração Inicial
+  - Após clonar o repositório rodar o comando `npm i` para instalar todas as dependências
+  - Tenha uma instancia do banco de dados MongoDB rodando em sua máquina
+  - no arquivo ./src/models/connection.js configurar o MONGO_DB_URL para o endereço da sua instancia do mongodb.
+  - Utilize um API Client como Insomnia ou Postman para fazer as requisições.
   ## Rodando o projeto
+  - Utilizar o comando `npm run dev`, para rodar a api utilizando o nodemon, ou npm start para rodar usando o node
+  
   ## Utilizando as rotas
+  Nesta api temos 3 rotas distintas: `/users`, `/login` e `/recipes`
+  
+  ### Utilizando a rota `/users`
+  - POST - no `/` para criar um novo usuário, passando como parametro um JSON contendo as chaves 'name', 'email' e 'password' e seus valores sendo strings.
+  - POST - no `/admin` para criar um novo admin utilizando os mesmos parâmetros no método de criar usuário, mas apenas um admin pode cadastrar um admin. (necessita fazer o login, ver abaixo)
+  
+  ### Utilizando a rota `/login`
+  - POST - no `/` para fazer o login e receber um token do tipo JWT para utilizar como autenticador. Devemos passar um JSON contendo as chaves 'email' e 'password' como parametro.
+
+  ### Utilizando a rota `/recipes`
+  - GET - no `/` para podermos consultar todas as receitas cadastradas ou no `/id` para consultar uma receita em específico
+
+  A partir daqui precisaremos fazer login para poder realizar as requisições e passar no Header uma chave 'Authorization' com o valor do token recebido no login.
+  
+  - POST - no `/` para podermos cadastrar uma nova receita, é necessário passar como parametro um JSON com as chaves 'name', 'ingredients' e 'preparation'. Qualquer usuário pode cadastrar uma receita.
+  - PUT - no `/id` utilizando o id da receita que desejamos modificar, devemos passar como parametro um JSON, com as mesmas chaves utilizadas anteriormente ao cadastrar uma receita. Vale lembrar que apenas o usuário criador da receita ou um admin podem alterar os dados da mesma.
+  - DELETE - no `/id`, não precisamos passar nenhum JSON, mas apenas o dono da receita ou um admin podem deletá-la.
 
 ---
 # Como desenvolver
