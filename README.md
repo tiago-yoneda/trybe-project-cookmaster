@@ -1,9 +1,11 @@
-### Avisos
+# Avisos
 
-Projeto de Backend no curso da Trybe
+Projeto de Backend no curso da Trybe.
 
+Aqui temos uma API com CRUD de receitas e uma etapa de cadastro de usuários e administradores.
+Qualquer usuario cadastrado pode criar uma receita, e apenas o dono da receita ou o admin podem modificá-la.
 
-
+API criada usando Node.JS, express e banco de dados MongoDB. Utilizando verificação via JWT.
 
 # Boas vindas ao repositório do projeto Cookmaster!
 
@@ -20,6 +22,10 @@ Aqui você vai encontrar os detalhes de como estruturar o desenvolvimento do seu
 - [Habilidades](#habilidades)
 - [O que deverá ser desenvolvido](#o-que-deverá-ser-desenvolvido)
   - [Desenvolvimento](#desenvolvimento)
+- [Como Utilizar este projeto](#como-utilizar-este-projeto)
+  - [Configuração inicial](#configuração-inicial)
+  - [Rodando o Projeto](#rodando-o-projeto)
+  - [Utilizando as rotas](#utilizando-as-rotas)
 - [Como desenvolver](#como-desenvolver)
   - [Todos os seus endpoints devem estar no padrão REST](#todos-os-seus-endpoints-devem-estar-no-padrão-rest)
   - [Conexão com o Banco](#conexão-com-o-banco)
@@ -112,7 +118,12 @@ Deverá ser possível adicionar uma imagem à uma receita, utilizando o upload d
   ```
 
 ---
+# Como utilizar este projeto
+  ## Configuração Inicial
+  ## Rodando o projeto
+  ## Utilizando as rotas
 
+---
 # Como desenvolver
 
 **⚠️ Leia-os atentamente e siga à risca o que for pedido. ⚠️**
