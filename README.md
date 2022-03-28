@@ -1,4 +1,4 @@
-# Avisos
+# Avisos v2
 
 Projeto de Backend no curso da Trybe.
 
